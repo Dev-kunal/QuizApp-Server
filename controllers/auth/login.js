@@ -18,8 +18,7 @@ const login = async (req, res) => {
     user = await user.save();
     const token = jwt.sign(
       { userId: user._id, username: user.username },
-      process.env.SECRET,
-      { expiresIn: "24h" }
+      process.env.SECRET
     );
     user.password = undefined;
     res.status(200).json({ success: true, user, token });
