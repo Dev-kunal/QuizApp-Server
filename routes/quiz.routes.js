@@ -6,9 +6,11 @@ router.route("/").post(async (req, res) => {
   let category = req.body.category;
   try {
     const quiz = await Quiz.find({ category });
-    res.json({ success: true, quiz });
+    res.status(201).json({ success: true, quiz });
   } catch (err) {
-    res.json({ success: false, errorMessage: "Something went wrong" });
+    res
+      .status(500)
+      .json({ success: false, errorMessage: "Something went wrong" });
   }
 });
 
