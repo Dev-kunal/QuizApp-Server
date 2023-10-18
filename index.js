@@ -21,6 +21,7 @@ app.use(function (req, res, next) {
   );
   next();
 });
+
 app.use("/user", userRouter);
 app.use("/quiz", authVerify, quizRouter);
 
