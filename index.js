@@ -33,5 +33,5 @@ app.get("/", (req, res) => {
 app.use(routeHandler);
 
 app.listen(process.env.PORT || 5000, () => {
-  console.log("server started");
+  console.log("Quiz app Server started");
 });
